@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin/login', [
+    'as' => 'login_admin', 'uses' => 'AdministratorController@showLogin'
+]);
+
+Route::get('admin', function() {
+	return redirect()->route('login_admin');
+});
+
